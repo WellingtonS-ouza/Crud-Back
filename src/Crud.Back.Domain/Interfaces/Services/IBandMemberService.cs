@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Crud.Back.Domain.Interfaces.Services
 {
-    public interface IBandMemberService : IBaseService<BandMember>
+    public interface IBandMemberService
     {
 
     }

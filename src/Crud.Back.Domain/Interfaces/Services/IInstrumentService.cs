@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Crud.Back.Domain.Interfaces.Services
 {
-    public interface IInstrumentService : IBaseService<Instrument>
+    public interface IInstrumentService 
     {
 
     }

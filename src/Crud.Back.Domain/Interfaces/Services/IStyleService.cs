@@ -6,7 +6,7 @@ using System.Text;
 namespace Crud.Back.Domain.Interfaces.Services
 {
 
-    public interface IStyleService : IBaseService<Style>
+    public interface IStyleService 
     {
 
     }
