@@ -8,6 +8,6 @@ namespace Crud.Back.Domain.Interfaces.Services
 
     public interface IBandService 
     {
-
+        Task<IEnumerable<Band>> GetAll();
     }
 }
