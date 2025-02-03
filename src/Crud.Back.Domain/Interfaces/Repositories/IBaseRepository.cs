@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Crud.Back.Domain.Entities;
 
 namespace Crud.Back.Domain.Interfaces.Repositories
 {
@@ -10,7 +11,7 @@ namespace Crud.Back.Domain.Interfaces.Repositories
         Task<T> GetById(object id);
         void Insert(T entidade);
         void Update(T entidade);
-        void Delete(T entidade);
+        Task<T> Delete(T entidade);
         int Commit();
         void Dispose();
     }

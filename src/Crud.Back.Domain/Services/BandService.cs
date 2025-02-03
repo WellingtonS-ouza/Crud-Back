@@ -22,5 +22,53 @@ namespace Crud.Back.Domain.Services
         {
             return await _bandRepository.GetAll();
         }
+        public async Task<Band> GetById(Guid id)
+        {
+            return await _bandRepository.GetById(id);
+
+        }
+        public void Insert(Band band)
+        {
+            _bandRepository.Insert(band);
+            _bandRepository.Commit();
+        }
+        public void Update(Band band)
+        {
+
+            if (band == null)
+            {
+                throw new ArgumentNullException(nameof(band), "A banda não pode ser nula");
+            }
+
+            var existingBand = _bandRepository.GetById(band.Id);
+
+            if (existingBand == null)
+            {
+
+                throw new KeyNotFoundException($"Banda com ID {band.Id} não encontrada.");
+            }
+            _bandRepository.Update(band);
+            _bandRepository.Commit();
+
+
+        }
+        public async Task Delete(Guid id)
+        {
+            if (id == Guid.Empty)
+            {
+                throw new ArgumentException("O ID da banda é inválido.");
+            }
+
+            var existingBand = await _bandRepository.GetById(id);
+
+            if (existingBand == null)
+            {
+                throw new KeyNotFoundException($"Banda com ID {id} não encontrada.");
+            }
+
+            await _bandRepository.Delete(existingBand);
+            _bandRepository.Commit();
+        }
+
     }
 }
