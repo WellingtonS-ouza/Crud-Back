@@ -36,9 +36,9 @@ namespace Crud.Back.Domain.Services
         {
 
 
-            var existingMember = _bandMemberRepository.GetById(member.Id);
+            var existingBandMember = _bandMemberRepository.GetById(member.Id);
 
-            if (existingMember == null)
+            if (existingBandMember == null)
             {
 
                 throw new KeyNotFoundException($"Membro com ID {member.Id} não encontrado.");

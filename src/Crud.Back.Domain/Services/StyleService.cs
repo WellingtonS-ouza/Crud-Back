@@ -36,9 +36,9 @@ namespace Crud.Back.Domain.Services
         {
 
 
-            var existingMember = _styleRepository.GetById(style.Id);
+            var existingStyle = _styleRepository.GetById(style.Id);
 
-            if (existingMember == null)
+            if (existingStyle == null)
             {
 
                 throw new KeyNotFoundException($"Estilo com ID {style.Id} não encontrado.");

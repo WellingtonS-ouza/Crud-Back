@@ -36,9 +36,9 @@ namespace Crud.Back.Domain.Services
         {
 
 
-            var existingMember = _instrumentRepository.GetById(instrument.Id);
+            var existingInstrument = _instrumentRepository.GetById(instrument.Id);
 
-            if (existingMember == null)
+            if (existingInstrument == null)
             {
 
                 throw new KeyNotFoundException($"Instrumento com ID {instrument.Id} não encontrado.");
