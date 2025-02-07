@@ -1,4 +1,6 @@
-﻿using Crud.Back.Domain.Entities;
+﻿using System.Collections.Generic;
+using System.Reflection.Emit;
+using Crud.Back.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Crud.Back.Infra.Data.Context
@@ -16,7 +18,7 @@ namespace Crud.Back.Infra.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-          
+            
         }
     }
 }
