@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Crud.Back.Domain.Entities;
-
-namespace Crud.Back.Domain.Interfaces.Repositories
+﻿namespace Crud.Back.Domain.Interfaces.Repositories
 {
     public interface IBaseRepository<T> where T : class
     {
-        Task<IEnumerable<T>> GetAll();
-        Task<T> GetById(object id);
-        void Insert(T entidade);
-        void Update(T entidade);
-        Task<T> Delete(T entidade);
-        int Commit();
-        void Dispose();
+        Task<IEnumerable<T>> GetAllAsync();
+        Task<T> GetByIdAsync(object id);
+        Task InsertAsync(T entity);
+        void Update(T entity);
+        void Delete(T entity);
+        Task Commit();
     }
 }

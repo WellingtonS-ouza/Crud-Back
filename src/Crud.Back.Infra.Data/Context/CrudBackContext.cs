@@ -1,24 +1,32 @@
-﻿using System.Collections.Generic;
-using System.Reflection.Emit;
-using Crud.Back.Domain.Entities;
+﻿using Crud.Back.Domain.Entities;
+using Crud.Back.Infra.Data.Mapping;
 using Microsoft.EntityFrameworkCore;
 
 namespace Crud.Back.Infra.Data.Context
 {
-    public class ApplicationDbContext : DbContext
+    public class CrudBackContext : DbContext, IDisposable
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
-
         public DbSet<Band> Band { get; set; }
         public DbSet<Member> Member { get; set; }
         public DbSet<Instrument> Instrument { get; set; }
         public DbSet<Style> Style { get; set; }
         public DbSet<BandMember> BandMember { get; set; }
 
+        public CrudBackContext(DbContextOptions<CrudBackContext> options)
+            : base(options)
+        {
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            
+
+            modelBuilder.Entity<Band>(new BandMap().Configure);
+        }
+
+        public override int SaveChanges()
+        {
+            return base.SaveChanges();
         }
     }
 }
