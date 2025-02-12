@@ -22,6 +22,11 @@ namespace Crud.Back.Infra.Data.Context
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Band>(new BandMap().Configure);
+            modelBuilder.Entity<BandMember>(new BandMemberMap().Configure);
+            modelBuilder.Entity<Instrument>(new InstrumentMap().Configure);
+            modelBuilder.Entity<Member>(new MemberMap().Configure);
+            modelBuilder.Entity<Style>(new StyleMap().Configure);
+
         }
 
         public override int SaveChanges()
