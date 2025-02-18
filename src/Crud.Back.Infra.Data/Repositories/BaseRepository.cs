@@ -13,7 +13,7 @@ namespace Crud.Back.Infra.Data.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public virtual async Task<IEnumerable<T>> GetAllAsync()
         {
             try
             {
@@ -25,7 +25,7 @@ namespace Crud.Back.Infra.Data.Repositories
             }
         }
 
-        public async Task<T> GetByIdAsync(object id)
+        public virtual async Task<T> GetByIdAsync(object id)
         {
             try
             {
@@ -37,7 +37,7 @@ namespace Crud.Back.Infra.Data.Repositories
             }
         }
 
-        public async Task InsertAsync(T entity)
+        public virtual async Task InsertAsync(T entity)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace Crud.Back.Infra.Data.Repositories
             }
         }
 
-        public void Update(T entity)
+        public virtual void Update(T entity)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace Crud.Back.Infra.Data.Repositories
             }
         }
 
-        public void Delete(T entity)
+        public virtual void Delete(T entity)
         {
             try
             {
@@ -73,7 +73,7 @@ namespace Crud.Back.Infra.Data.Repositories
             }
         }
 
-        public async Task Commit()
+        public virtual async Task CommitAsync()
         {
             try
             {

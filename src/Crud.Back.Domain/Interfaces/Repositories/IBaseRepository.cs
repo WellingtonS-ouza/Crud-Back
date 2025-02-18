@@ -7,6 +7,6 @@
         Task InsertAsync(T entity);
         void Update(T entity);
         void Delete(T entity);
-        Task Commit();
+        Task CommitAsync();
     }
 }
