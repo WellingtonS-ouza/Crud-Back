@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Crud.Back.Application.DTO
+﻿namespace Crud.Back.Application.DTO
 {
-    internal class MemberResponseDto
+    public class MemberResponseDto
     {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public string Gender { get; set; }
+
+        public Guid IdInstrument { get; set; }
     }
 }

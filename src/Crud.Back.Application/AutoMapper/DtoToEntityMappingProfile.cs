@@ -10,6 +10,11 @@ namespace Crud.Back.Application.AutoMapper
         {
             CreateMap<BandRequestDto, Band>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(_ => Guid.NewGuid()));
+            CreateMap<MemberRequestDto, Member>();
+            CreateMap<InstrumentRequestDto, Instrument>();
+            CreateMap<StyleRequestDto, Style>();
+
+
         }
     }
 }

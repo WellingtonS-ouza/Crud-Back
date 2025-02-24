@@ -9,6 +9,11 @@ namespace Crud.Back.Application.AutoMapper
         public EntityToDtoMappingProfile()
         {
             CreateMap<Band, BandResponseDto>();
+            CreateMap<Member, MemberResponseDto>();
+            CreateMap<Instrument, InstrumentResponseDto>();
+            CreateMap<Style, StyleResponseDto>();
+
+
         }
     }
 }
