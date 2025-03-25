@@ -13,7 +13,6 @@ namespace Crud.Back.Application.DTO
         [Required(ErrorMessage = "O estilo é obrigatório")]
         public Guid IdStyle { get; set; }
 
-        [Required(ErrorMessage = "O membro é obrigatório")]
         public IEnumerable<MemberRequestDto> Members { get; set; }
     }
 }
