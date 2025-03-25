@@ -26,7 +26,6 @@ namespace Crud.Back.Infra.Data.Context
             modelBuilder.Entity<Instrument>(new InstrumentMap().Configure);
             modelBuilder.Entity<Member>(new MemberMap().Configure);
             modelBuilder.Entity<Style>(new StyleMap().Configure);
-
         }
 
         public override int SaveChanges()

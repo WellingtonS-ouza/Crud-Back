@@ -23,10 +23,6 @@ namespace Crud.Back.Infra.Data.Mapping
             builder.HasOne(b => b.Style)
                 .WithMany(s => s.Bands)
                 .HasForeignKey(b => b.IdStyle);
-
-            builder.HasMany(b => b.BandMembers)
-            .WithOne(bm => bm.Band)
-            .HasForeignKey(bm => bm.Band);
         }
     }
 }

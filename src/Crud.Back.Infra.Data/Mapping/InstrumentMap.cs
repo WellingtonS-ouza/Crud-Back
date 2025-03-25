@@ -16,10 +16,6 @@ namespace Crud.Back.Infra.Data.Mapping
                 .IsRequired()
                 .HasMaxLength(100);
 
-            builder.HasMany(i => i.Members)
-              .WithOne(m => m.Instrument)
-              .HasForeignKey(m => m.IdInstrument)
-              .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

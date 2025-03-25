@@ -26,10 +26,6 @@ namespace Crud.Back.Infra.Data.Mapping
             builder.HasOne(m => m.Instrument)
                 .WithMany(i => i.Members)
                 .HasForeignKey(m => m.IdInstrument);
-
-            builder.HasMany(m => m.BandMembers)
-                .WithOne(bm => bm.Member)
-                .HasForeignKey(bm => bm.IdMember);
         }
     }
 }

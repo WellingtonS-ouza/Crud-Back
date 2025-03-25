@@ -15,11 +15,6 @@ namespace Crud.Back.Infra.Data.Mapping
             builder.Property(s => s.Name)
                 .IsRequired()
                 .HasMaxLength(100);
-
-            builder.HasMany(s => s.Bands)
-                .WithOne(b => b.Style)
-                .HasForeignKey(b => b.IdStyle);
-
         }
     }
 }
