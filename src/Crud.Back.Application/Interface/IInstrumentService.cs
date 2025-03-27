@@ -6,6 +6,6 @@ namespace Crud.Back.Application.Interface
     {
         Task<IEnumerable<InstrumentResponseDto>> GetAllAsync();
         Task<InstrumentResponseDto> GetByIdAsync(Guid id);
-
+       
     }
 }
